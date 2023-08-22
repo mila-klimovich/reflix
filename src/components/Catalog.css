@@ -1,0 +1,12 @@
+.catalog{
+    color: white;
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.catalog_movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+

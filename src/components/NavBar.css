@@ -1,0 +1,26 @@
+.navBar{
+    color: lightskyblue;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    height: 30px;
+    z-index: 1;
+    background-color: black;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.navBar_logo{
+    position: fixed;
+    left: 20px;
+    object-fit: contain;
+}
+
+.navBar_logIn{
+    position: fixed;
+    right: 20px;
+    object-fit: contain;
+}
