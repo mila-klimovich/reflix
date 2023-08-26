@@ -7,7 +7,6 @@ function Home() {
     const navigate = useNavigate();
 
     const handleUserClick = (user) => {
-        // Save user information to local storage
         localStorage.setItem("selectedUser", JSON.stringify(user));
 
         navigate(`/catalog/user/${user.name.toLowerCase()}`);

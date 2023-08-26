@@ -8,7 +8,7 @@ import Rented from "./Rented";
 export default function Catalog({ title, callUrl }) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
-    const [selectedUser, setSelectedUser] = useState(null); // Added state for selected user
+    const [selectedUser, setSelectedUser] = useState(null); 
     const location = useLocation();
 
     useEffect(() => {
@@ -47,14 +47,13 @@ export default function Catalog({ title, callUrl }) {
         setSelectedUser(updatedUser);
     };
 
-    // Inside Catalog component
     const handleRemoveMovieFromRented = (movieId) => {
         const updatedUser = { ...selectedUser };
         updatedUser.rentedMovies = updatedUser.rentedMovies.filter(
             (movie) => movie.id !== movieId
         );
         localStorage.setItem("selectedUser", JSON.stringify(updatedUser));
-        setSelectedUser(updatedUser); // Update the selectedUser state to trigger re-render
+        setSelectedUser(updatedUser); 
     };
 
     return (
@@ -64,7 +63,6 @@ export default function Catalog({ title, callUrl }) {
             )}
             <h2 className="catalog_name">Rented movies</h2>
             {selectedUser && selectedUser.rentedMovies.length > 0 && (
-                // Inside the rendering part of Catalog component
                 <Rented
                     movies={selectedUser.rentedMovies}
                     onRemoveMovie={handleRemoveMovieFromRented}
@@ -77,7 +75,7 @@ export default function Catalog({ title, callUrl }) {
                         key={movie.id}
                         movie={movie}
                         onMovieClick={handleMovieClick}
-                        onRentedMoviesChange={handleRentedMoviesChange} // Pass the callback
+                        onRentedMoviesChange={handleRentedMoviesChange} 
                     />
                 ))}
             </div>

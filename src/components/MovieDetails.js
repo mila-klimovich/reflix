@@ -45,7 +45,6 @@ function MovieDetails() {
 
                 <div className="details_buttons">
                     <button className="details_button">Play</button>
-                    {/* <button className="details_button">Rent</button> */}
                 </div>
 
                 <h1 className="details_description">

@@ -26,7 +26,7 @@ export default function Movie({ movie, onMovieClick, isUserCatalog, onRentedMovi
                     "selectedUser",
                     JSON.stringify(updatedUser)
                 );
-                onRentedMoviesChange(updatedUser); // Call the callback
+                onRentedMoviesChange(updatedUser); 
             }
         } else {
             navigate(`/movie/${movie.id}`);
