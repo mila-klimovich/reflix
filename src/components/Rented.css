@@ -1,0 +1,22 @@
+.rented_movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    /* margin: 0 -10px; */
+}
+
+#removeIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#removeIcon:hover {
+    color: lightgreen;
+    cursor: pointer;
+}

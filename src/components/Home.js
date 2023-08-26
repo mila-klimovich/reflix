@@ -6,9 +6,11 @@ import { USERS } from "../Users";
 function Home() {
     const navigate = useNavigate();
 
-    const handleUserClick = (userName) => {
-        // Pass user's name
-        navigate(`/catalog/user/${userName}`.toLowerCase()); // Use user's name in the URL
+    const handleUserClick = (user) => {
+        // Save user information to local storage
+        localStorage.setItem("selectedUser", JSON.stringify(user));
+
+        navigate(`/catalog/user/${user.name.toLowerCase()}`);
     };
 
     return (
@@ -20,7 +22,7 @@ function Home() {
                         key={user.id}
                         className="square"
                         style={{ backgroundColor: user.color }}
-                        onClick={() => handleUserClick(user.name)} // Pass user's name
+                        onClick={() => handleUserClick(user)}
                     >
                         {user.name}
                     </div>

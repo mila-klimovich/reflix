@@ -25,18 +25,3 @@ export const USERS = [
     },
 ];
     
-// Function to add a rented movie to a user's rentedMovies array
-export function addRentedMovie(userId, movieId) {
-    const user = USERS.find(user => user.id === userId);
-    if (user) {
-        user.rentedMovies.push(movieId);
-    }
-}
-
-// Function to remove a rented movie from a user's rentedMovies array
-export function removeRentedMovie(userId, movieId) {
-    const user = USERS.find(user => user.id === userId);
-    if (user) {
-        user.rentedMovies = user.rentedMovies.filter(id => id !== movieId);
-    }
-}

@@ -1,11 +1,14 @@
 .catalog_movies {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    /* margin: 0 -10px; */
 }
 
 .movie-wrapper {
-    width: calc(25% - 30px);
+    width: calc(25% - 40px);
+    max-width: 250px;
     margin: 15px;
     position: relative;
     overflow: hidden;
