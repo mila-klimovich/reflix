@@ -1,7 +1,4 @@
 .navBar{
-    color: lightskyblue;
-    font-size: 1.5rem;
-    font-weight: 600;
     position: fixed;
     top: 0;
     width: 100%;
@@ -13,13 +10,31 @@
     justify-content: space-between; 
 }
 
-.navBar_logo{
+.navBar_menu{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
     position: fixed;
     left: 20px;
     object-fit: contain;
+    display: flex;
 }
 
-.navBar_logIn{
+.navBar_menu > a {
+    color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-right: 20px;
+        /* Add margin-right */
+        text-decoration: none;
+        /* Remove underline */
+        transition: color 0.3s;
+}
+
+.navBar_logo{
+    color: lightskyblue;
+    font-size: 1.5rem;
+    font-weight: 600;
     position: fixed;
     right: 20px;
     object-fit: contain;

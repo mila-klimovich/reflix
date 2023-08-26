@@ -1,0 +1,37 @@
+.home {
+    background-color: #111;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.who-is-watching {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.square-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+}

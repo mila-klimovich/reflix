@@ -1,12 +1,39 @@
+.catalog_movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.movie-wrapper {
+    width: calc(25% - 30px);
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
 .catalog_poster {
-    width: calc(25% - 10px);
-    margin-bottom: 20px;
-    object-fit: contain;
-    max-height: 300px;
+    width: 100%;
+    height: auto;
     transition: transform 600ms;
+    position: relative;
 }
 
 .catalog_poster:hover {
     transform: scale(1.1);
+    cursor: pointer;
+}
+
+#addIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#addIcon:hover {
+    color: lightgreen;
     cursor: pointer;
 }
