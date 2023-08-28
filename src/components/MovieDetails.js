@@ -25,10 +25,6 @@ function MovieDetails() {
         return null;
     }
 
-    function shorten(str, n) {
-        return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-    }
-
     return (
         <div
             className="details"
@@ -48,7 +44,7 @@ function MovieDetails() {
                 </div>
 
                 <h1 className="details_description">
-                    {shorten(movie?.overview, 200)}
+                    {movie?.overview}
                 </h1>
             </div>
         </div>

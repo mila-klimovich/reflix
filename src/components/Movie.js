@@ -5,7 +5,14 @@ import { AiFillPlusCircle } from "react-icons/ai";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-export default function Movie({ movie, onMovieClick, isUserCatalog, onRentedMoviesChange }) {
+export default function Movie({
+    movie,
+    onMovieClick,
+    isUserCatalog,
+    onRentedMoviesChange,
+    setModalOpened,
+    setLastRented,
+}) {
     const navigate = useNavigate();
 
     const handleMovieClick = (addIconClicked) => {
@@ -26,11 +33,25 @@ export default function Movie({ movie, onMovieClick, isUserCatalog, onRentedMovi
                     "selectedUser",
                     JSON.stringify(updatedUser)
                 );
-                onRentedMoviesChange(updatedUser); 
+                onRentedMoviesChange(updatedUser);
             }
         } else {
             navigate(`/movie/${movie.id}`);
         }
+
+        const selectedUser = JSON.parse(localStorage.getItem("selectedUser"));
+
+        setModalOpened(true);
+        try {
+            setLastRented(
+                selectedUser.rentedMovies[selectedUser.rentedMovies.length - 1]
+                    .title
+            );
+        } catch (error) {
+            console.error("Error setting lastRented:", error);
+            setLastRented(""); 
+        }
+
     };
 
     return (

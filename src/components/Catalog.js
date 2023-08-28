@@ -4,12 +4,15 @@ import Movie from "./Movie";
 import MovieDetails from "./MovieDetails";
 import { useLocation } from "react-router-dom";
 import Rented from "./Rented";
+import Modal from "./Modal";
 
 export default function Catalog({ title, callUrl }) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [selectedUser, setSelectedUser] = useState(null); 
     const location = useLocation();
+    const [modalOpened, setModalOpened] = useState(false);
+    const [lastRented, setLastRented] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -68,6 +71,9 @@ export default function Catalog({ title, callUrl }) {
                     onRemoveMovie={handleRemoveMovieFromRented}
                 />
             )}
+            {modalOpened && (
+                <Modal modalClosed={setModalOpened} lastRented={lastRented} />
+            )}
             <h2 className="catalog_name">{title}</h2>
             <div className="catalog_movies">
                 {movies.map((movie) => (
@@ -75,7 +81,9 @@ export default function Catalog({ title, callUrl }) {
                         key={movie.id}
                         movie={movie}
                         onMovieClick={handleMovieClick}
-                        onRentedMoviesChange={handleRentedMoviesChange} 
+                        onRentedMoviesChange={handleRentedMoviesChange}
+                        setModalOpened={setModalOpened}
+                        setLastRented={setLastRented}
                     />
                 ))}
             </div>
